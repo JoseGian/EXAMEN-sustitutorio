@@ -1,0 +1,42 @@
+@startuml
+ 
+class animal{
+    id: int
+    nombre: string
+}
+ 
+class especie{
+    id: int
+    nombre: string
+    categoria: string
+}
+
+class habitat{
+    id: int
+    nombre: string
+    capacidad: int
+}
+
+class cuidador{
+    id: int
+    nombre: string
+    especialidad: string
+}
+ 
+class actividad{
+    id:int
+    nombre: string
+    descripcion: string  
+    horario:fecha
+     
+}
+ 
+
+ 
+especie "1" -- "*" animal
+especie "1" -- "*" habitat
+habitat "1" -- "*" animal
+animal "1" -- "1" cuidador
+actividad "1" -- "*" animal
+ 
+@enduml
